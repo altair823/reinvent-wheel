@@ -60,6 +60,9 @@ def render_rust_e2e(topic: dict) -> str:
             set -euo pipefail
             MODE="${{1:-mission}}"
             ROOT="$(cd "$(dirname "${{BASH_SOURCE[0]}}")/.." && pwd)"
+            TOPIC_NAME="${{ROOT##*/}}"
+            SCRIPT_NAME="${{BASH_SOURCE[0]##*/}}"
+            LANGUAGE="${{SCRIPT_NAME%-smoke.sh}}"
             PORT="${{PORT:-18080}}"
             export PORT
             pushd "$ROOT/rust" >/dev/null
@@ -87,6 +90,7 @@ def render_rust_e2e(topic: dict) -> str:
                 exit 1
               fi
             fi
+            echo "E2E PASS: $TOPIC_NAME ($LANGUAGE, mode=$MODE)"
             popd >/dev/null
             """
         )
@@ -95,12 +99,16 @@ def render_rust_e2e(topic: dict) -> str:
         #!/usr/bin/env bash
         set -euo pipefail
         ROOT="$(cd "$(dirname "${{BASH_SOURCE[0]}}")/.." && pwd)"
+        TOPIC_NAME="${{ROOT##*/}}"
+        SCRIPT_NAME="${{BASH_SOURCE[0]##*/}}"
+        LANGUAGE="${{SCRIPT_NAME%-smoke.sh}}"
         pushd "$ROOT/rust" >/dev/null
         make -s --no-print-directory run > /tmp/{topic['slug']}-rust-out.txt
         if ! diff -u "$ROOT/fixtures/mission-expected.txt" /tmp/{topic['slug']}-rust-out.txt; then
           echo "Mission not complete for Rust: implement the topic until stdout matches fixtures/mission-expected.txt" >&2
           exit 1
         fi
+        echo "E2E PASS: $TOPIC_NAME ($LANGUAGE)"
         popd >/dev/null
         """
     )

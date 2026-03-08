@@ -2,6 +2,9 @@
 set -euo pipefail
 MODE="${1:-mission}"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+TOPIC_NAME="${ROOT##*/}"
+SCRIPT_NAME="${BASH_SOURCE[0]##*/}"
+LANGUAGE="${SCRIPT_NAME%-smoke.sh}"
 PORT="${PORT:-18080}"
 export PORT
 pushd "$ROOT/rust" >/dev/null
@@ -29,4 +32,5 @@ if [ "$MODE" = "mission" ]; then
     exit 1
   fi
 fi
+echo "E2E PASS: $TOPIC_NAME ($LANGUAGE, mode=$MODE)"
 popd >/dev/null
