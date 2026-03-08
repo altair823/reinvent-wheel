@@ -916,6 +916,7 @@ def render_root_readme() -> str:
         3. `make verify`
 
         `bootstrap`은 로컬 툴체인을 준비합니다. `smoke`는 42개 프로젝트의 hello 템플릿 실행 경로를 실제로 돌립니다. `verify`는 테스트와 e2e를 끝까지 순회하며, 실패가 있어도 요약을 남기고 마지막에만 실패 코드로 종료합니다.
+        에디터의 `rust-analyzer`는 repo-local `.toolchains/` 경로를 자동으로 모를 수 있습니다. Rust 관련 `cargo`/`rustc` not found 오류가 나면 `source scripts/env.sh`를 실행한 셸에서 에디터를 다시 열거나, 에디터 PATH에 `.toolchains/cargo/bin`을 추가하세요.
 
         ## 템플릿 철학
 
@@ -1166,6 +1167,7 @@ def render_root_readme() -> str:
         - `scripts/env.sh`
         - repo-local 툴체인 경로, `CARGO_HOME`, `RUSTUP_HOME`, `JAVA_HOME`, `PYTHON_BIN`, `GRADLE_BIN` 등을 통일해서 잡아줍니다.
         - 각 프로젝트의 `Makefile`은 이 스크립트를 source해서 실행 환경을 맞춥니다.
+        - 다만 에디터나 LSP는 이 스크립트를 자동으로 source하지 않을 수 있으므로, 특히 Rust 작업 시에는 이 셸에서 에디터를 열거나 `.toolchains/cargo/bin`이 PATH에 포함되도록 맞춰야 합니다.
 
         - `scripts/bootstrap-rust.sh`, `scripts/bootstrap-jdk.sh`, `scripts/bootstrap-gradle.sh`, `scripts/bootstrap-python.sh`
         - 템플릿을 처음 받는 사용자가 `make bootstrap`만으로 필요한 툴체인을 로컬 `.toolchains/` 아래에 준비할 수 있게 해줍니다.
