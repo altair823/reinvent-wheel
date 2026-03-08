@@ -1,0 +1,3 @@
+INFO started
+WARN low-disk
+ERROR retry

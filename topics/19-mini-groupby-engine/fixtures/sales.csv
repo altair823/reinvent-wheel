@@ -1,0 +1,5 @@
+team,amount,status
+red,10,ok
+blue,5,ok
+red,2,fail
+blue,8,ok

@@ -1,0 +1,2 @@
+1: Rust makes it easy to build tools.
+3: Rust and C++ can coexist.

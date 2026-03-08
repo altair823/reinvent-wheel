@@ -1,0 +1,2 @@
+exact=red:3,blue:2
+approx=red,blue

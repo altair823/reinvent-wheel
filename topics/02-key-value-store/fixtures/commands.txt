@@ -1,0 +1,5 @@
+SET language Rust
+SET mood focused
+GET language
+DELETE mood
+SNAPSHOT

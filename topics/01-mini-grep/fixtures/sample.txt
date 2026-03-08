@@ -1,0 +1,3 @@
+Rust makes it easy to build tools.
+C++ still teaches discipline.
+Rust and C++ can coexist.

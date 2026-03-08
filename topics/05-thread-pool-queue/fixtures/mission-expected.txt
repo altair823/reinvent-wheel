@@ -1,0 +1,2 @@
+workers=2
+results=1,4,9,16

@@ -1,0 +1,10 @@
+[project]
+        name = "t19_mini_groupby_engine_python"
+        version = "0.1.0"
+        requires-python = ">=3.14"
+        dependencies = [
+    "duckdb>=1.3.2"
+]
+[build-system]
+        requires = ["setuptools>=68"]
+        build-backend = "setuptools.build_meta"

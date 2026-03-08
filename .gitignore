@@ -1,0 +1,38 @@
+# Local toolchains and environments
+.toolchains/
+.venv/
+.python-version
+
+# Build and cache directories
+.gradle/
+.gradle-home/
+artifacts/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+**/target/
+**/build/
+**/bin/
+**/__pycache__/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Coverage and runtime outputs
+.coverage
+coverage/
+*.class
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.pyc
+*.pyo
+*.tmp
+*.swp
+*.swo
+*.out

@@ -1,0 +1,6 @@
+[package]
+name = "t21_parallel_log_analyzer_rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]

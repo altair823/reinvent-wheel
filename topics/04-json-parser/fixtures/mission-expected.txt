@@ -1,0 +1,2 @@
+tokens=26
+keys=name,count,active,items

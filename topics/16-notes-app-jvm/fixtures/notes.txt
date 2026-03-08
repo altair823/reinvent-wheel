@@ -1,0 +1,2 @@
+1|Rust ideas|Build a parser
+2|Parallel notes|Measure speedup

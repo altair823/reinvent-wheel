@@ -1,0 +1,6 @@
+[package]
+name = "t06_mini_git_object_store_rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]

@@ -1,0 +1,3 @@
+rows=3
+count_nulls=1
+ratio_mean=0.433

@@ -1,0 +1,6 @@
+[package]
+name = "t22_external_sort_merge_rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]

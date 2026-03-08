@@ -1,0 +1,12 @@
+[versions]
+junit = "5.13.1"
+kotlin = "2.3.10"
+coroutines = "1.10.2"
+h2 = "2.3.232"
+
+[libraries]
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version = "1.13.1" }
+kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+h2 = { module = "com.h2database:h2", version.ref = "h2" }

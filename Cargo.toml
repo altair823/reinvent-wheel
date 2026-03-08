@@ -1,0 +1,20 @@
+[workspace]
+        members = [
+        "topics/01-mini-grep/rust",
+"topics/02-key-value-store/rust",
+"topics/03-http-server-router/rust",
+"topics/04-json-parser/rust",
+"topics/05-thread-pool-queue/rust",
+"topics/06-mini-git-object-store/rust",
+"topics/07-arena-allocator/rust",
+"topics/08-tiny-async-executor/rust",
+"topics/18-dataset-profiler/rust",
+"topics/19-mini-groupby-engine/rust",
+"topics/20-batch-etl-pipeline/rust",
+"topics/21-parallel-log-analyzer/rust",
+"topics/22-external-sort-merge/rust",
+"topics/23-windowed-timeseries-analyzer/rust",
+"topics/24-heavy-hitter-stream/rust",
+"topics/25-mini-mapreduce/rust"
+        ]
+        resolver = "2"
