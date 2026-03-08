@@ -267,10 +267,11 @@ def render_bootstrap_python() -> str:
         fi
         rm -rf "$REPO_ROOT/.venv"
         "$PYTHON_HOME/bin/python3" -m venv --without-pip "$REPO_ROOT/.venv"
+        VENV_PYTHON="$REPO_ROOT/.venv/bin/python"
         if "$PYTHON_HOME/bin/python3" -c "import ssl, zlib" >/dev/null 2>&1; then
-          "$REPO_ROOT/.venv/bin/python" -m ensurepip --upgrade
-          "$REPO_ROOT/.venv/bin/pip" install --upgrade pip
-          "$REPO_ROOT/.venv/bin/pip" install duckdb
+          "$VENV_PYTHON" -m ensurepip --upgrade --default-pip
+          "$VENV_PYTHON" -m pip install --upgrade pip
+          "$VENV_PYTHON" -m pip install duckdb
         else
           echo "Python $PYTHON_VERSION is available but lacks ssl/zlib; created a venv without pip." >&2
         fi
